@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* reset sheet */
+
+html, body, p, input, button, ul, ol, li, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li, dl, dt, dd {
+    list-style: none;
+}
+
+a, u {
+    text-decoration: normal;
+}
