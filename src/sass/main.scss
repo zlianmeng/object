@@ -42,6 +42,8 @@
   @include basicstyle(483, 26);
   border: 2px solid #{$main-bc-color};
   padding: 5px 3px 5px 5px;
+  outline: none;
+  font: 16px/22px arial;
 }
 .search-box button {
   @include basicstyle(130, 40, $main-bc-color);
@@ -209,7 +211,160 @@
   margin: 0 auto;
 }
 // 主体
-//banner图
-#banner-nav{
-    
+
+//banner图板块
+#banner-nav {
+  width: 100%;
 }
+//设置banner图背景色的盒子
+#banner-nav .banner-bgcolor {
+  width: 100%;
+  height: 500px;
+}
+//banner图板块的版心盒子
+.banner-center {
+  @include basicstyle(1260, 500);
+  margin: 0 auto;
+  position: relative;
+}
+//大banner图-背景图
+.banner-pic,
+.big-banner-link,
+.big-banner-link .big-banner {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.banner-center .big-banner {
+  @include setbgpic("https://img.alicdn.com/imgextra/i4/112/O1CN01YuXwxx1ChKtwuzhEi_!!112-0-luban.jpg_q100.jpg_.webp");
+}
+//大banner图-图片广告
+.tanx-banner-con {
+  width: 100%;
+  text-align: center;
+}
+//小banner图
+.banner-center .sm-banner {
+  @include basicstyle(220, 235, rgba(255, 255, 255, 0.7));
+  display: block;
+  position: absolute;
+  right: 0;
+  transition: background-color 0.4s;
+}
+.banner-center .sm1 {
+  top: 10px;
+}
+.banner-center .sm2 {
+  bottom: 10px;
+}
+.banner-center .sm-banner img {
+  vertical-align: middle;
+  width: 100%;
+}
+//鼠标滑过小banner图改变样式
+.sm-banner:hover {
+  background: rgba(255, 255, 255, 1);
+}
+//轮播图按钮
+.banner-btn {
+  display: block;
+  position: relative;
+  margin: -40px auto 0;
+  text-align: center;
+  z-index: 100;
+}
+.banner-btn a {
+  @include basicstyle(25, 5);
+  display: inline-block;
+  background: #000;
+  overflow: hidden;
+  margin-left: 5px;
+  cursor: pointer;
+  opacity: 0.3;
+}
+//会场活动
+#interact .wrapper {
+  margin: 30px auto 0;
+  padding-right: 30px;
+}
+.interact-box::after {
+  @include fix();
+}
+.interact-box a {
+  float: left;
+  display: block;
+  width: 238px;
+  margin-right: 10px;
+}
+.interact-box a img {
+  width: 100%;
+  transition: opacity 0.3s ease-out;
+}
+// 鼠标悬停图片的遮罩效果
+.interact-box a:hover img {
+  @include zhezhao();
+}
+// 品牌活动
+#brand-activity .wrapper::after{
+  @include fix();
+}
+#brand-activity .wrapper{
+  padding-top:24px;
+}
+.brand-left {
+  @include basicstyle(234, 370, #fff);
+  margin-right: 13px;
+}
+.brand-center,
+.brand-right {
+  @include basicstyle(485, 370, #fff);
+}
+.brand-center {
+  margin-right: 13px;
+}
+//品牌活动标题栏
+.brand .head {
+  height: 54px;
+  background: #fff;
+  font-size: 0;
+  border-style: solid;
+  border-width: 0 0 1px;
+  border-color: #eee;
+  position: relative;
+  color: #999;
+  @include spfont();
+}
+.brand .head .cn {
+  @include fontstyle(18, #333, 54, 700);
+  display: inline-block;
+  height: 18px;
+  margin-left: 10px;
+}
+.brand .head .en {
+  @include fontstyle(14, #333, 24, 700);
+  display: inline-block;
+  margin-left: 10px;
+  height: 44px;
+}
+.brand .head .more {
+  @include basicstyle(42, 54);
+  @include setbgpic("../img/more.png", no-repeat, right);
+  @include fontstyle(16, #666, 54);
+  background-size: 18px 18px;
+  position: absolute;
+  right: 14px;
+  top: 0;
+  z-index: 99;
+  padding-right: 14px;
+  overflow: hidden;
+}
+// 品牌活动图片
+.brand .body{
+  display:block;
+  height:316px;
+}
+.brand .body img{
+  width:100%;
+  height:316px;
+}
+//品牌展示-品牌广告

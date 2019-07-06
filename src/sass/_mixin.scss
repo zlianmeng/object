@@ -39,3 +39,6 @@
     font-weight: #{$weight};
   }
 }
+@mixin setbgpic($url,$repeat:no-repeat,$p1:center,$p2:center){
+  background:url(#{$url}) $repeat #{$p1} #{$p2};
+}
