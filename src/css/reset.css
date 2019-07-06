@@ -11,5 +11,9 @@ ul, ol, li, dl, dt, dd {
 }
 
 a, u {
-    text-decoration: normal;
+    text-decoration: none;
+}
+
+b {
+    font-weight:100;
 }

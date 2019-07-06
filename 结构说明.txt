@@ -14,6 +14,7 @@ tmall-info：底部天猫信息
 other-link：底部友情链接
 footer-copyright：底部版权信息
 copyright-info：版权信息
+
 footer-img：底部的图片
 
 
@@ -42,8 +43,19 @@ seller：商家服务
 phone-tmall：手机天猫
 footer-info:底部信息
 
+关于颜色变量:
+$top-bc-color:顶部的背景颜色
+$main-bc-color:主体的背景颜色（大部分背景与所有价格颜色）
+$product-item-color:除了猜你喜欢之外的产品标题的字体颜色
+$footer-title-color:底部标题的颜色，灰色
+$fotter-cont-color：底部内容的颜色，浅灰色
+$copyright-cont-color:底部版权板块的字体颜色;
+$copyright-alone:底部版权信息的字体颜色;
+$guess-title-color:猜你喜欢字体的颜色（包括《更多》标题）
 
+关于边框的变量
 
+$hover border:悬停的边框样式
 
 
 

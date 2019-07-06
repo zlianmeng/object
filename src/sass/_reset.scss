@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* reset sheet */
+body,
+input,
+button,
+textarea {
+  font: 12px/1.5 tahoma, arial, "\5b8b\4f53";
+}
+html,
+body,
+p,
+input,
+button,
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  list-style: none;
+}
+
+a,
+u {
+  text-decoration: none;
+}
+a {
+  color: #999;
+}
+
+b {
+  font-weight: 100;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+}
+i,em{
+  font-style:normal;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+.wrapper {
+  width: 1230px;
+  margin: 0 auto;
+  padding-right: 30px;
+}
+.fleft {
+  float: left;
+}
+.fright {
+  float: right;
+}
+.active{
+  display:none;
+}

@@ -1,0 +1,215 @@
+@charset "utf-8";
+//引用文件
+@import "reset";
+@import "color";
+@import "border";
+@import "mixin";
+// 头部-登陆注册
+#header {
+  min-width: 990px;
+  background: #fff;
+}
+#top-bar {
+  height: 33px;
+  background: #{$top-bc-color};
+}
+//logo
+#logo-search .logo {
+  width: 290px;
+  position: absolute;
+  top: 33px;
+  left: 25px;
+}
+.logo img {
+  @include basicstyle(240, 130);
+  margin: 1px auto;
+}
+#logo-search .wrapper::after {
+  @include fix();
+}
+//占位
+.header-empty-box {
+  @include basicstyle(180, 70);
+  padding: 2px 0 0 102.5px;
+}
+//搜索框与按钮
+.search-box {
+  width: 630px;
+  padding-top: 38px;
+  position: relative;
+}
+.search-box input {
+  @include basicstyle(483, 26);
+  border: 2px solid #{$main-bc-color};
+  padding: 5px 3px 5px 5px;
+}
+.search-box button {
+  @include basicstyle(130, 40, $main-bc-color);
+  @include fontstyle(18, #fff, null, 900);
+  border: 2px solid #{$main-bc-color};
+  letter-spacing: 5px;
+  font-family: "\5FAE\8F6F\96C5\9ED1", arial, "\5b8b\4f53";
+  position: absolute;
+  top: 38px;
+  cursor: pointer;
+}
+//热门搜索
+.hot-query {
+  @include basicstyle(625, 24);
+  padding: 6px 0 0;
+  margin-left: -13px;
+  margin-bottom: 23px;
+}
+.hot-query li {
+  @include fontstyle(14);
+  display: inline-block;
+  padding: 0 12px;
+  line-height: 1.1;
+  border-right: 1px solid #ccc;
+  margin-left: -3px;
+}
+//导航左侧
+#nav {
+  border-bottom: 2px solid #{$main-bc-color};
+}
+.nav-box {
+  @include basicstyle(200, 36);
+  background: #{$main-bc-color};
+  position: relative;
+}
+.nav-box .icon-liebiao1 {
+  display: inline-block;
+  margin-left: 20px;
+}
+.nav-box .icon-liebiao1,
+.span1 {
+  @include fontstyle(16, #fff, 36, 900);
+  @include spfont();
+  display: inline;
+}
+//导航右侧
+#nav .nav-info {
+  @include basicstyle(850, 35);
+  padding-left: 180px;
+}
+.nav-info a {
+  @include fontstyle(16, $product-title-color, 36, 500);
+  @include spfont();
+  display: block;
+  height: 35px;
+  padding: 0 8px;
+  float: left;
+}
+.nav-info a img {
+  @include basicstyle(100, 30);
+  margin-top: 3px;
+  display: block;
+}
+//鼠标悬停时字体的变化
+.nav-info a:hover {
+  color: #{$main-bc-color};
+}
+
+//垂直导航
+.banner-nav-box {
+  @include basicstyle(200, 500, rgba(0, 0, 0, 0.55));
+  position: relative;
+  z-index: 11;
+}
+.nav-item {
+  @include fontstyle(14, null, 31.2);
+  position: relative;
+  height: 31.2px;
+}
+.nav-item span {
+  padding-left: 15px;
+  padding-right: 4px;
+  color: #999;
+}
+.nav-item a {
+  color: #fff;
+}
+//banner导航鼠标滑过效果
+.nav-item:hover {
+  background: #fff;
+}
+.nav-item:hover a,
+.nav-item:hover span {
+  color: #e54077;
+}
+//垂直导航-二级导航
+.content-con {
+  @include basicstyle(852, 500, #fff);
+  position: absolute;
+  top: 37px;
+  left: 200px;
+}
+//二级导航-左侧-热门链接
+.hot-link {
+  @include basicstyle(583, 462, #fff);
+  margin: 19px 30px;
+  overflow: hidden;
+}
+//热门链接标题
+.hot-link .title {
+  @include basicstyle(60, 22);
+  @include fontstyle(14, #333, 22, 700);
+  margin-right: 30px;
+  position: relative;
+  float: left;
+}
+.hot-link .title em {
+  display: inline-block;
+  width: 60px;
+  overflow: hidden;
+  text-align: justify;
+}
+.hot-link .title span {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -15px;
+}
+//热门链接的内容
+.line-con {
+  width: 493px;
+  float: left;
+}
+.line-con a {
+  @include fontstyle(14, #666, 22);
+  @include spfont();
+  height: 22px;
+  float: left;
+  margin-left: 13px;
+}
+//分隔虚线
+.border-box {
+  width: 100%;
+  height: 10.5px;
+  margin-bottom: 10.5px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  float: left;
+}
+//右侧-商标展示
+.sub-logo-con {
+  @include basicstyle(189, 480, #fafafa);
+  padding: 10px;
+}
+.sub-logo-con .logo {
+  @include basicstyle(73, 37, #fff);
+  float: left;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+.sub-logo-con .logo img {
+  @include basicstyle(73, 36.5);
+  display: block;
+  margin: 0 auto;
+}
+// 主体
+//banner图
+#banner-nav{
+    
+}

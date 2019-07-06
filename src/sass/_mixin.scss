@@ -1,0 +1,41 @@
+@mixin zhezhao() {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+@mixin hidefont() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin fix() {
+  content: "\20";
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+@mixin spfont() {
+  font-family: "Microsoft YaHei", SimSun, "\5b8b\4f53", sans-serif;
+}
+@mixin basicstyle($width, $height: null, $background: null) {
+  width: #{$width}px;
+  @if ($height!=null) {
+    height: #{$height}px;
+  }
+  @if ($background!=null) {
+    background: #{$background};
+  }
+}
+@mixin fontstyle($size:14, $color: null, $height: null, $weight: null) {
+  font-size: #{$size}px;
+  @if ($height!=null) {
+    line-height: #{$height}px;
+  }
+  @if ($color!=null) {
+    color: #{$color};
+  }
+  @if ($weight!=null) {
+    font-weight: #{$weight};
+  }
+}
