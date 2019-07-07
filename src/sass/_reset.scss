@@ -36,6 +36,7 @@ u {
 }
 a {
   color: #999;
+  font-family: "Microsoft YaHei", SimSun, "\5b8b\4f53", sans-serif;
 }
 
 b {
@@ -66,6 +67,19 @@ img {
   margin: 0 auto;
   padding-right: 30px;
 }
+.wrapper-footer{
+  width:1190px;
+  margin:0 auto;
+}
+.area-con {
+  padding-top: 10px;
+}
+#main {
+  background: #f5f5f5;
+  border-bottom:1px solid #D1D7DC;
+}
+
+// 特殊的类
 .fleft {
   float: left;
 }
@@ -79,7 +93,7 @@ img {
   background: #fff;
   opacity: 0.6;
 }
-.area-con {
-  padding-top: 10px;
-  padding-right: 30px;
+.product-item-box .product-switch .floor-current-tab {
+  color: #fff;
+  background: #00b262;
 }

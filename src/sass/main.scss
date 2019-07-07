@@ -305,11 +305,11 @@
   @include zhezhao();
 }
 // 品牌活动
-#brand-activity .wrapper::after{
+#brand-activity .wrapper::after {
   @include fix();
 }
-#brand-activity .wrapper{
-  padding-top:24px;
+#brand-activity .wrapper {
+  padding-top: 24px;
 }
 .brand-left {
   @include basicstyle(234, 370, #fff);
@@ -359,12 +359,647 @@
   overflow: hidden;
 }
 // 品牌活动图片
-.brand .body{
-  display:block;
-  height:316px;
+.brand .body {
+  display: block;
+  height: 316px;
 }
-.brand .body img{
-  width:100%;
-  height:316px;
+.brand .body img {
+  width: 100%;
+  height: 316px;
 }
 //品牌展示-品牌广告
+#brand-show .wrapper {
+  position: relative;
+  .brand-box {
+    background-color: #f5f5f5;
+    margin-right: -1px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-top: 15px;
+  }
+  .brand-item-btn {
+    @include basicstyle(122, 108);
+    margin-right: 1px;
+    margin-bottom: 1px;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    text-align: center;
+    line-height: 0;
+    .switch-btn {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 18px;
+      i {
+        font-size: 30px;
+        line-height: 70px;
+        display: block;
+        height: 50%;
+        transition: all 0.3s ease-out;
+      }
+      span {
+        line-height: 30px;
+        display: block;
+        height: 50%;
+      }
+    }
+  }
+  .switch-btn:hover {
+    background: red;
+    color: #fff;
+  }
+}
+#brand-show .brand-box::after {
+  @include fix();
+}
+
+.brand-box .brand-item {
+  @include basicstyle(122, 108);
+  margin-right: 1px;
+  margin-bottom: 1px;
+  float: left;
+  position: relative;
+}
+//单个广告盒子的样式
+.brand-img {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  line-height: 108px;
+  background-color: #fff;
+}
+.brand-img img {
+  width: 82%;
+  height: 50px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 108px;
+}
+.brand-item .brand-mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease-out;
+  opacity: 0;
+}
+.brand-mask .coupon {
+  color: #fff;
+  text-align: center;
+  line-height: 90px;
+  height: 60px;
+}
+.brand-mask .coupon span {
+  @include hidefont();
+  @include spfont();
+  @include fontstyle(12, #fff, 90);
+  display: block;
+  padding: 0 5px;
+  text-align: center;
+}
+.brand-mask .enter {
+  text-align: center;
+  height: 32px;
+}
+.brand-mask .enter span {
+  @include basicstyle(63, 18, $main-bc-color);
+  @include fontstyle(12, #fff, 15);
+  display: inline-block;
+  border-radius: 9px;
+}
+//天猫超市
+//标题部分
+#product-content {
+  height: 665px;
+}
+#product-content .wrapper {
+  margin: 20px auto 0;
+  position: relative;
+  .title {
+    display: inline-block;
+  }
+}
+#product-content .title .floorlogo {
+  @include fontstyle(18, #000);
+  display: inline-block;
+  vertical-align: middle;
+  height: 28px;
+}
+#product-content .title .floorlogo img {
+  @include basicstyle(214, 25);
+  vertical-align: middle;
+}
+#product-content .title .floor-link {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  width: 800px;
+  text-align: right;
+}
+.floor-link a {
+  @include fontstyle(14, #000, 20);
+  @include spfont();
+  display: inline-block;
+  height: 20px;
+  margin: 5px 10px;
+  border: none;
+  border-bottom: 1px solid #f5f5f5;
+}
+//板块标题-鼠标悬停出现下划线
+.floor-link a:hover {
+  border-bottom: 1px solid #000;
+}
+//产品展示
+.product-show {
+  width: 100%;
+  height: 618px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.product-show .section-left {
+  @include basicstyle(235, 618, #f5f5f5);
+  float: left;
+  position: relative;
+  a {
+    display: block;
+  }
+}
+@include left-product("#supermarket");
+//左侧图片上的小标题
+.section-left .img-detail {
+  @include basicstyle(218, 64);
+  position: absolute;
+  vertical-align: middle;
+  bottom: 20%;
+}
+.img-detail .left-title-wrap,
+.img-detail .right-title-wrap {
+  overflow: hidden;
+  color: #fff;
+  vertical-align: middle;
+}
+.img-detail .left-title-wrap {
+  @include basicstyle(70, 64, rgba(0, 0, 0, 0.9));
+  text-align: center;
+  display: table-cell;
+}
+.img-detail .right-title-wrap {
+  @include basicstyle(128, 64, rgba(0, 0, 0, 0.6));
+  left: 70px;
+  top: 0;
+  position: absolute;
+}
+.right-title-absulute {
+  margin-top: 8px;
+  margin-left: 14px;
+}
+//给标题设置字体
+.left-title-wrap span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 24px;
+  font-size: 18px;
+  width: 36px;
+  overflow: hidden;
+}
+.right-title-absulute .right-title {
+  display: block;
+  line-height: 24px;
+  font-size: 18px;
+}
+//图片最下方的箭头图片
+.detail-wrap {
+  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 4%, rgba(0, 0, 0, 0.36) 100%);
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.product-show .section-left .detail-wrap img {
+  @include basicstyle(32, 32);
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+//鼠标滑过时的遮罩效果
+.section-left a:hover {
+  @include zhezhao();
+}
+//右侧产品展示盒子
+.product-show .product-item-box {
+  @include basicstyle(995, 618);
+  float: left;
+  overflow: hidden;
+}
+//产品展示中的tab 切换
+.product-show .product-item-box .product-switch {
+  @include basicstyle(484, 301, #fff);
+  margin-left: 13px;
+  float: left;
+  border-bottom: 15px solid #f5f5f5;
+  position: relative;
+}
+.product-item-box .product-switch .floor-tabs {
+  @include basicstyle(462, 282);
+  margin: 10px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.09);
+  .floor-tab-title {
+    overflow: hidden;
+    background: #f1f1f1;
+  }
+}
+
+.product-item-box .product-switch li {
+  @include basicstyle(191, 57);
+  @include fontstyle(18, #000, 30);
+  float: left;
+  cursor: pointer;
+  padding: 0 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+.product-item-box .product-switch li .tab-title {
+  @include fontstyle(18, null, 20);
+  margin-top: 16px;
+}
+//tab切换的内容
+.floor-tab-content .floor-tab-detail {
+  a {
+    @include basicstyle(462, 225);
+    display: block;
+    .right-detail {
+      @include basicstyle(291, 87, rgba(0, 0, 0, 0));
+      @include setbgpic("../img/TB1AnTXewMPMeJjy1XcXXXpppXa-290-87.png", no-repeat, 0);
+      position: absolute;
+      top: 153px;
+      z-index: 99;
+    }
+    .item-img {
+      @include basicstyle(200, 200);
+      float: right;
+      margin-top: 10px;
+      margin-right: 30px;
+    }
+  }
+}
+.right-detail .title-wrap {
+  margin-left: 26px;
+  margin-top: 8px;
+  vertical-align: middle !important;
+  img {
+    @include basicstyle(23, 23);
+    margin-top: -10px;
+  }
+  .tab-item-title {
+    @include fontstyle(24, #00b262, null, 700);
+    margin-left: 8px;
+    letter-spacing: 1px;
+  }
+}
+.right-detail div .tab-desp {
+  @include fontstyle(20, #000);
+  margin-left: 26px;
+  letter-spacing: 1px;
+}
+//鼠标滑过tab的遮罩效果
+.floor-tab-detail:hover .item-img {
+  @include zhezhao();
+}
+//具体每一项的产品展示
+@include product-item();
+// 天猫国际
+// 左侧产品展示-分开两个盒子
+.product-show .section-left a {
+  @include basicstyle(235, 301);
+  border-bottom: 15px solid #f5f5f5;
+  position: relative;
+  background-color: #fff;
+}
+.product-show .section-left a img {
+  @include basicstyle(235, 301);
+}
+// 品牌潮店-广告条
+.title-bar {
+  @include basicstyle(1230, 90);
+
+  overflow: hidden;
+  display: block;
+  margin: 10px auto 0;
+  position: relative;
+}
+//美丽人生
+#product-content .color-mark {
+  @include basicstyle(5, 18, #333);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.floorlogo {
+  @include spfont();
+  @include fontstyle(18);
+  .floor-sub-name {
+    @include fontstyle(14, #000, 24);
+    display: inline-block;
+    margin-left: 10px;
+    height: 18px;
+  }
+}
+@include left-product("#fashion");
+//酷玩潮店
+@include left-product("#play");
+// 居家生活
+@include left-product("#family");
+// 打造爱巢
+@include left-product("#home-decoration");
+// 户外出行
+@include left-product("#outdoors");
+// 猜你喜欢
+#guess-like {
+  //标题
+  .guess-title {
+    @include spfont();
+    @include fontstyle(18, #666, 20, 100);
+    text-align: center;
+    height: 43px;
+    span::before {
+      @include guess-title-line();
+      left: -50px;
+    }
+    span::after {
+      @include guess-title-line();
+      right: -50px;
+    }
+    span {
+      position: relative;
+      i {
+        @include fontstyle(18, #ff0036, 20, 100);
+        text-align: center;
+        font-family: "Microsoft YaHei", SimSun, sans-serif, "\65b9\6b63\5170\4ead\9ed1";
+      }
+    }
+  }
+  //猜你喜欢的具体产品展示项
+  .product-show .guess-item {
+    @include basicstyle(235, null, #fff);
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 7px;
+    .product-item {
+      margin: 0;
+    }
+  }
+}
+// end
+.tm-end {
+  @include setbgpic("../img/TB1wQDAPXXXXXXgaFXXXXXXXXXX-62-35.png");
+  background-size: cover;
+  @include basicstyle(80, 45);
+  position: relative;
+  // display: none;
+  text-align: center;
+  margin: 0 auto 10px;
+
+  z-index: 9;
+}
+// 底部
+#footer {
+  text-align: center;
+}
+// 天猫保证
+#tmall-ensure {
+  .wrapper-footer {
+    height: 100px;
+    background: url(../img/TB14dANRXXXXXbdXXXXXXXXXXXX-1190-100.jpg) no-repeat;
+    margin: 25px auto;
+    padding: 0;
+  }
+}
+// 天猫服务描述
+#tmall-desc {
+  border-top: 1px solid #ededed;
+  .wrapper-footer {
+    padding-top: 22px;
+    height: 190px;
+    margin: auto;
+    border-top: 1px solid #ededed;
+    background: url(../img/tmall-logo.jpg) 45px bottom no-repeat;
+  }
+  #ensure,
+  #beginner,
+  #payment,
+  #seller,
+  #phone-tmall {
+    width: 186px;
+    padding-left: 52px;
+    dt {
+      @include fontstyle(16, #646464, 30, 700);
+      height: 30px;
+      text-align: left;
+    }
+    dd a {
+      @include fontstyle(null, #8b8b8b, 20);
+      width: 100px;
+      overflow: hidden;
+      text-align: left;
+      height: 20px;
+      display: block;
+    }
+  }
+  #phone-tmall {
+    dd a {
+      width: 105px;
+      height: 105px;
+      line-height: 105px;
+      text-align: center;
+      img {
+        @include basicstyle(105, 105);
+      }
+    }
+  }
+}
+//底部信息
+#footer-info {
+  border-top: 2px solid #ff0036;
+  background: #000;
+  text-align: left;
+  min-height: 177px;
+  .tmall-info {
+    padding: 5px 0;
+  }
+  .tmall-info a {
+    color: #fff;
+    line-height: 25px;
+    margin-right: 3px;
+  }
+  .other-link {
+    color: #fff;
+    line-height: 25px;
+    padding: 5px 0;
+    a {
+      margin-right: 3px;
+      color: #fff;
+    }
+  }
+  // 版权相关信息
+  .footer-copyright {
+    line-height: 20px;
+    background: #000;
+    color: #a4a4a4;
+    line-height: 20px;
+    a,
+    span {
+      color: #a4a4a4;
+      margin-right: 65px;
+    }
+  }
+  .footer-img {
+    padding-top: 10px;
+    a {
+      margin-right: 10px;
+    }
+  }
+  padding-bottom: 18px;
+}
+// 悬停导航
+#top-nav {
+  background-color: #ff0036;
+  display: block;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  height: 50px;
+  top: 0;
+  .wrapper {
+    background-color: transparent;
+    position: relative;
+    height: 50px;
+    margin: 0 auto;
+    border: none;
+    overflow: hidden;
+    .tmall-logo {
+      @include fontstyle(22, #fff, 30, 700);
+      @include basicstyle(160, 30);
+      overflow: hidden;
+      margin-top: 12px;
+      z-index: 20;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #seach {
+      @include basicstyle(740, 30);
+      padding-top: 12px;
+      position: relative;
+      z-index: 10;
+      margin: 0 auto;
+      overflow: hidden;
+      form {
+        border: none !important;
+        clear: both;
+        fieldset {
+          border: none;
+          position: relative;
+        }
+        legend {
+          display: none;
+        }
+        .top-nav-box {
+          @include basicstyle(650, 30);
+          float: left;
+          font-size: 12px;
+        }
+        .mallSeach-input {
+          position: relative;
+          height: 30px;
+          vertical-align: middle;
+        }
+        input {
+          @include basicstyle(640, 20);
+          @include fontstyle(null, #000, 20, 900);
+          outline: transparent dotted 0;
+          opacity: 1;
+          z-index: 2;
+          padding: 5px 3px 5px 5px;
+          border: none;
+          box-sizing: content-box;
+          position: relative;
+          vertical-align: middle;
+          overflow-y: visible;
+        }
+        label {
+          max-width: 90%;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        button {
+          @include basicstyle(90, 32, #ff0036);
+          @include fontstyle(16, #fff);
+          right: -1px;
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          border: 0;
+          letter-spacing: 4px;
+          cursor: pointer;
+          overflow: hidden;
+          font-family: "\5FAE\8F6F\96C5\9ED1", arial, "\5b8b\4f53";
+        }
+      }
+    }
+  }
+}
+// 左侧悬停楼梯
+.mui-lift {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  z-index: 9999;
+  width: 35px;
+  text-align: center;
+  margin-left: -673px !important;
+  z-index: 999998 !important;
+  .nav-header {
+    background-color: #ff0036;
+    position: relative;
+    display: block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 1px;
+    overflow: hidden;
+    font-size: 12px;
+  }
+  a {
+    position: relative;
+    display: block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 1px;
+    background-color: #666;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    font-size: 12px;
+    div {
+      line-height: 12px;
+      width: 24px;
+      height: 28px;
+      margin: 6px auto;
+    }
+  }
+}
+// 右侧导航
