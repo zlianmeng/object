@@ -602,7 +602,7 @@ img {
   border-radius: 9px; }
 
 #product-content {
-  height: 665px; }
+  min-height: 665px; }
 
 #product-content .wrapper {
   margin: 20px auto 0;
@@ -645,7 +645,7 @@ img {
 
 .product-show {
   width: 100%;
-  height: 618px;
+  min-height: 618px;
   margin-top: 10px;
   overflow: hidden; }
 
@@ -1015,6 +1015,9 @@ img {
   #guess-like .product-show .guess-item .product-item {
     margin: 0; }
 
+.product-show .guess-item:nth-child(5n) {
+  margin-right: 0 !important; }
+
 .tm-end {
   background: url(../img/TB1wQDAPXXXXXXgaFXXXXXXXXXX-62-35.png) no-repeat center center;
   background-size: cover;
@@ -1122,7 +1125,8 @@ img {
   width: 100%;
   z-index: 10000;
   height: 50px;
-  top: 0; }
+  top: 0;
+  display: none; }
   #top-nav .wrapper {
     background-color: transparent;
     position: relative;
@@ -1208,11 +1212,10 @@ img {
   position: fixed;
   bottom: 50px;
   left: 50%;
-  z-index: 9999;
   width: 35px;
   text-align: center;
   margin-left: -673px !important;
-  z-index: 999998 !important; }
+  z-index: 99 !important; }
   .mui-lift .nav-header {
     background-color: #ff0036;
     position: relative;
@@ -1228,24 +1231,31 @@ img {
     overflow: hidden;
     font-size: 12px; }
   .mui-lift a {
-    position: relative;
-    display: block;
     width: 36px;
     height: 36px;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
     line-height: 36px;
-    text-align: center;
     color: #fff;
+    position: relative;
+    display: block;
+    text-align: center;
     text-decoration: none;
     cursor: pointer;
     margin-top: 1px;
-    background-color: #666;
-    background-color: rgba(0, 0, 0, 0.6);
-    overflow: hidden;
-    font-size: 12px; }
+    overflow: hidden; }
     .mui-lift a div {
       line-height: 12px;
       width: 24px;
       height: 28px;
       margin: 6px auto; }
+
+.fixed-nav-right {
+  width: 35px;
+  background: #000;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0; }
 
 /*# sourceMappingURL=main.css.map */

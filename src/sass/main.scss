@@ -475,7 +475,7 @@
 //天猫超市
 //标题部分
 #product-content {
-  height: 665px;
+  min-height: 665px;
 }
 #product-content .wrapper {
   margin: 20px auto 0;
@@ -517,7 +517,7 @@
 //产品展示
 .product-show {
   width: 100%;
-  height: 618px;
+  min-height: 618px;
   margin-top: 10px;
   overflow: hidden;
 }
@@ -755,6 +755,9 @@
     }
   }
 }
+.product-show .guess-item:nth-child(5n) {
+  margin-right: 0 !important;
+}
 // end
 .tm-end {
   @include setbgpic("../img/TB1wQDAPXXXXXXgaFXXXXXXXXXX-62-35.png");
@@ -764,7 +767,6 @@
   // display: none;
   text-align: center;
   margin: 0 auto 10px;
-
   z-index: 9;
 }
 // 底部
@@ -875,6 +877,7 @@
   z-index: 10000;
   height: 50px;
   top: 0;
+  display:none;
   .wrapper {
     background-color: transparent;
     position: relative;
@@ -959,11 +962,10 @@
   position: fixed;
   bottom: 50px;
   left: 50%;
-  z-index: 9999;
   width: 35px;
   text-align: center;
   margin-left: -673px !important;
-  z-index: 999998 !important;
+  z-index: 99!important;
   .nav-header {
     background-color: #ff0036;
     position: relative;
@@ -980,20 +982,15 @@
     font-size: 12px;
   }
   a {
+    @include basicstyle(36,36,rgba(0, 0, 0, 0.6));
+    @include fontstyle(12,#fff,36);
     position: relative;
     display: block;
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
     text-align: center;
-    color: #fff;
     text-decoration: none;
     cursor: pointer;
     margin-top: 1px;
-    background-color: #666;
-    background-color: rgba(0, 0, 0, 0.6);
     overflow: hidden;
-    font-size: 12px;
     div {
       line-height: 12px;
       width: 24px;
@@ -1003,3 +1000,10 @@
   }
 }
 // 右侧导航
+.fixed-nav-right {
+  @include basicstyle(35, null, #000);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
