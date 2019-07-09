@@ -4,7 +4,7 @@
 	}
 	Web.prototype.init = function () {
 		//天猫国际数据渲染
-		this.ajax('tmhk', 'tmall-hk');
+		this.ajax('tmallgj', 'tmall-hk');
 		//美丽人生数据渲染
 		this.ajax('fashion', 'fashion');
 		//潮店酷玩数据渲染
@@ -16,7 +16,7 @@
 		// 户外出行
 		this.ajax('outdoors', 'outdoors');
 		// 猜你喜欢
-		this.ajax('guess', 'guess-like', 'product-show', '<li class="guess-item">', '</li>');
+		this.ajax('guesslist', 'guess-like', 'product-show', '<li class="guess-item">', '</li>');
 		// 广告数据渲染
 		this.brandshow();
 		// 天猫超市数据渲染
@@ -57,7 +57,7 @@
 	Web.prototype.brandshow = function () {
 		let that = this;
 		$.ajax({
-			url: 'http://10.31.158.21:8088/tianmao/object/php/branddata.php',
+			url: 'http://10.31.158.21:8088/tianmao/object/php/brand.php',
 			dataType: 'json',
 		}).done(function (data) {
 			that.$brand = $('.brand-box');
@@ -136,7 +136,7 @@
 	Web.prototype.super = function () {
 		let that = this;
 		$.ajax({
-			url: "http://10.31.158.21:8088/tianmao/object/php/super.php",
+			url: "http://10.31.158.21:8088/tianmao/object/php/supermarket.php",
 			dataType: "json",
 		}).done(function (data) {
 			that.$productcon = $('.product-box');
@@ -159,27 +159,113 @@
 	}
 	new Web();
 }(jQuery);
-// 顶部导航
-!function () {
-	function Tobnav() {
-		this.$topNav = $('#top-nav');
+// banner数据+效果
+$.ajax({
+	url: 'http://10.31.158.21:8088/tianmao/object/php/banner.php',
+	dataType: 'json'
+}).done(function (bannerdata) {
+	let bannerbgstr = '';
+	let $bgbox = $('.banner-center');
+	$.each(bannerdata, function (index, value) {
+		if (value.imgurls) {
+			bannerbgstr += `
+			<div class="banner-pic" style="display:none" bcolor="${value.color}">
+				<a class="big-banner-link" href="javascript:;">
+					<b class="big-banner" style="background:url(${value.url}) no-repeat center center;"></b>
+				</a>
+				<a class="sm-banner sm1" href="javascript:;">
+					<img src="${value.imgurls.split(',')[0]}"
+					alt="">
+				</a>
+				<a class="sm-banner sm2" href="javascript:;">
+					<img src="${value.imgurls.split(',')[1]}"
+					alt="">
+				</a>
+			</div>
+			`
+		} else {
+			bannerbgstr += `
+			<div class="banner-pic" style="display:none" bcolor="${value.color}">
+				<a class="big-banner-link" href="javascript:;">
+					<div class="tanx-banner-con">
+						<img class="tanx-banner"
+							src="${value.url}" alt="">
+					</div>
+				</a>
+			</div>
+			`
+		}
+	});
+	$bgbox.html(bannerbgstr);
+	// banner图效果
+	!function () {
+		function Lb() {
+			this.$bannerbox = $('.banner-pic');
+			this.$bannerbtn = $('.banner-btn a');
+			this.$bgcolorbox = $('.banner-bgcolor');
+			this.timer = null;
+			this.index = 0;
+			this.init();
 
-		this.navshow();
-	}
-	Tobnav.prototype.navshow = function () {
-		let that = this;
-		$(window).on('scroll', function () {
-			if ($(window).scrollTop() > 730) {
-				that.$topNav.css({
-					display: 'block',
-				});
-			} else {
-				that.$topNav.css('display', 'none');
-			}
-		})
-	}
-	new Tobnav();
-}(jQuery);
+		}
+		// 总调函数
+		Lb.prototype.init = function () {
+			// 轮播图展示初始化
+			let that = this;
+			this.$bannerbox.eq(0).css({
+				display: 'block',
+				opacity: 1,
+			});
+			this.$bgcolorbox.css("background", this.$bannerbox.eq(0).attr('bcolor'));
+			this.$bannerbtn.on('mouseover', function () {
+				that.btnswitch($(this).index());
+				that.switch($(this).index());
+				that.index = $(this).index();
+			});
+			//自动轮播
+			that.autoswitch();
+			// 鼠标悬停关闭定时器，离开开启定时器
+			this.$bannerbox.hover(function () {
+				clearInterval(that.timer);
+			}, function () {
+				that.autoswitch();
+			})
+		}
+		// 按钮样式切换
+		Lb.prototype.btnswitch = function (index) {
+			this.$bannerbtn.eq(index).addClass('selected').siblings().removeClass('selected');
+		}
+		//轮播切换效果
+		Lb.prototype.switch = function (index) {
+			let that = this;
+			this.$bannerbox.eq(index).animate({
+				opacity: 1,
+			}, 200).siblings('.banner-pic').animate({
+				opacity: 0,
+			}, 200, function () {
+				that.$bgcolorbox.css("background", that.$bannerbox.eq(index).attr('bcolor'));
+				that.$bannerbox.eq(index).css('display', 'block');
+				that.$bannerbox.eq(index).siblings().css('display', 'none');
+			})
+		}
+		// 自动轮播效果
+		Lb.prototype.autoswitch = function () {
+			let that = this;
+			this.timer = setInterval(function () {
+				that.index++;
+				if (that.index >= that.$bannerbtn.length) {
+					that.index = 0;
+					that.switch(that.index);
+					that.btnswitch(that.index);
+				} else {
+					that.switch(that.index);
+					that.btnswitch(that.index);
+				}
+			}, 4000);
+		}
+		new Lb();
+	}(jQuery);
+});
 // 楼梯全部效果
 !function () {
 	function Floor() {
@@ -212,21 +298,20 @@
 	// 楼梯的出现与消失
 	Floor.prototype.floorshow = function () {
 		if ($(window).scrollTop() > 680) {
-			this.$floorbox.stop(true).animate({
+			this.$floorbox.stop().animate({
 				width: 35,
 				height: 370,
 				opacity: 1,
 				display: 'block',
 			}, 200);
 		} else {
-			this.$floorbox.stop(true).animate({
+			this.$floorbox.stop().animate({
 				width: 0,
 				height: 0,
 				opacity: 0,
 				display: 'none',
 			}, 200)
 		}
-
 	}
 	// 鼠标移入效果
 	Floor.prototype.mouseover = function (num) {
@@ -262,20 +347,96 @@
 	}
 	//楼梯点击效果
 	Floor.prototype.click = function (num) {
-		$(window).scrollTop(this.sqall.eq(num).offset().top-50);
+		$('html,body').animate({
+			scrollTop: this.sqall.eq(num).offset().top - 50,
+		});
 	}
 	new Floor();
 }(jQuery);
-// banner数据
-// 	$.ajax({
-// 		url:'php/banner.php',
-// 		dataType:'json'
-// 	}).done(function(bannerdata){
-// 		$.each(bannerdata,function(index,value){
-// 			var $bannerstr='<ul>';
-
-// 		});
-// 	});
+// 顶部导航
+!function () {
+	function Tobnav() {
+		this.$topNav = $('#top-nav');
+		this.navshow();
+	}
+	Tobnav.prototype.navshow = function () {
+		let that = this;
+		$(window).on('scroll', function () {
+			if ($(window).scrollTop() > 730) {
+				that.$topNav.css({
+					display: 'block',
+				});
+			} else {
+				that.$topNav.css('display', 'none');
+			}
+		})
+	}
+	new Tobnav();
+}(jQuery);
+// 二级导航
+!function () {
+	function Tobnav() {
+		this.$subNav = $('.nav-box .content-con');
+		this.$navli = $('.nav-item');
+		this.init();
+	}
+	Tobnav.prototype.init = function () {
+		let that = this;
+		this.$navli.hover(function () {
+			that.$subNav.eq($(this).index()).addClass('show').siblings().removeClass('hide');
+		}, function () {
+			that.$subNav.removeClass('show').addClass('hide');
+		});
+	}
+	new Tobnav();
+}(jQuery);
+// tab切换
+!function () {
+	function Tab() {
+		this.$tabli = $('.floor-tab-title li');
+		this.$tabcon = $('.floor-tab-content');
+		this.timer=null;
+		this.num=0;
+		this.init();
+	}
+	//总调函数
+	Tab.prototype.init = function () {
+		let that=this;
+		this.$tabli.on('mouseover', function () {
+			that.switch($(this).index());
+		})
+		this.autoswitch();
+		this.hover();
+	}
+	// 切换效果
+	Tab.prototype.switch = function (index) {
+		this.$tabli.eq(index).addClass('floor-current-tab').siblings('li').removeClass('floor-current-tab');
+		this.$tabcon.eq(index).addClass('hide').siblings('.floor-tab-content').removeClass('hide');
+	}
+	// 自动tab切换
+	Tab.prototype.autoswitch = function () {
+		let that=this;
+		this.timer=setInterval(function(){
+			that.num++;
+			if(that.num>=that.$tabli.length){
+				that.num=0;
+				that.switch(that.num);
+			}else{
+				that.switch(that.num);
+			}
+		},3000);
+	}
+	// 鼠标悬停
+	Tab.prototype.hover=function(){
+		let that=this;
+		this.$tabcon.hover(function(){
+			clearInterval(that.timer);
+		},function(){
+			that.autoswitch();
+		})
+	}
+	new Tab();
+}(jQuery);
 
 // 	//lunbo数据
 // 	$.ajax({
@@ -284,7 +445,6 @@
 // 	}).done(function(bannerdata){
 // 		$.each(bannerdata,function(index,value){
 // 			var $bannerstr='<ul>';
-
 // 		});
 // 	});
 // 	//tab切换数据
@@ -299,12 +459,4 @@
 // 	});
 // }(jQuery);
 
-// !function(){
-// 	//banner效果
 
-// }(jQuery);
-
-// !function(){
-// 	//lunbo效果
-
-// }(jQuery);

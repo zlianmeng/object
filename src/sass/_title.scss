@@ -1,0 +1,78 @@
+@charset "utf-8";
+@import "reset";
+//top-bar样式
+#header {
+  min-width: 990px;
+  background: #fff;
+}
+#top-bar {
+  height: 33px;
+  background: #eee;
+  color: #656565;
+  a {
+    color: #656565;
+  }
+  border-bottom: 1px solid #ccc;
+}
+.sn-container {
+  height: 32px;
+  width: 100%;
+  position: relative;
+  line-height: 32px;
+  #login-info {
+    height: 32px;
+    line-height: 32px;
+    display: inline-block;
+    position: relative;
+    .sn-login {
+      padding: 0 10px;
+    }
+    .sn-register {
+      padding: 0 10px;
+    }
+  }
+  .sn-quick-menu {
+    height: 32px;
+    line-height: 32px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    list-style: none;
+    li {
+      float: left;
+      position: relative;
+      z-index: 93110;
+      padding: 0 10px;
+    }
+    .menu-hd {
+      padding-right: 14px;
+      border-color: #a9180a;
+      display: block;
+      height: 26px;
+      cursor: pointer;
+      z-index: 100001;
+      position: relative;
+      padding: 0 10px;
+    }
+    .sn-cart {
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      padding: 0 10px;
+    }
+    .sn-separator {
+      top: 9px;
+      display: inline-block;
+      width: 0;
+      height: 14px;
+      line-height: 14px;
+      vertical-align: top;
+      position: relative;
+      left: 0;
+      font-size: 0;
+      border-left: 1px solid #ccc;
+      margin: 0 2px 0 5px;
+      padding: 0;
+    }
+  }
+}

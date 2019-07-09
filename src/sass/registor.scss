@@ -1,0 +1,97 @@
+@charset "utf-8";
+@import "reset";
+@import "color";
+@import "border";
+@import "mixin";
+@import "title";
+//注册
+#register {
+  @include basicstyle(750);
+  margin: 0 auto;
+  padding: 100px 0 0 70px;
+  form {
+    position: relative;
+  }
+  p {
+    margin: 10px auto;
+    @include basicstyle(500, 40);
+    input {
+      @include basicstyle(250, 30);
+    }
+    label {
+      @include fontstyle(18, #888, 30);
+      @include basicstyle(80, 30);
+      display: inline-block;
+      padding-right: 20px;
+    }
+  }
+  .title {
+    @include fontstyle(16, #000, 40, 700);
+    span {
+      @include fontstyle(14, #999, 40);
+      padding-left: 30px;
+    }
+  }
+  .submit {
+    padding-top: 50px;
+    padding-left: 200px;
+    input {
+      @include basicstyle(200, 40, #f00);
+      @include fontstyle(18, #fff, 40);
+      outline: 0;
+      border: 0;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  }
+  .titlebox {
+    @include basicstyle(200, 150, #ccc);
+    position: absolute;
+    top: 0;
+    right: 45px;
+    border-radius: 8px;
+    .regex {
+      @include basicstyle(150, 40, #eee);
+      @include fontstyle(12, #000, 20);
+      margin-top: 15px;
+    }
+    .qzr {
+      @include basicstyle(150, 20);
+      margin-top: 15px;
+      span {
+        text-align: center;
+        @include basicstyle(40, 20, #eee);
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+    .baocuo {
+      @include basicstyle(150, 20, #eee);
+      margin-top: 15px;
+    }
+  }
+  .repass{
+    top:45px;
+    .baocuo{
+      margin-top:50px;
+    }
+  }
+  .user{
+    top:150px;
+    .regex{
+      margin-top:30px;
+    }
+  }
+  .titlebox::after {
+    content: "\20";
+    display: block;
+    @include basicstyle(0, 0);
+    border: 10px solid transparent;
+    border-left-color: #ccc;
+    border-bottom-color: #ccc;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 60px;
+    left: -8px;
+  }
+}

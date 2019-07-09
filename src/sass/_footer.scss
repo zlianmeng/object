@@ -1,0 +1,53 @@
+@charset "utf-8";
+@import "reset";
+@import "mixin";
+
+//底部信息
+#footer-info {
+    // 顶部边框颜色
+  border-top: 2px solid #fff;
+  //   背景颜色
+  background: #fff;
+  text-align: left;
+  min-height: 177px;
+  .tmall-info {
+    padding: 5px 0;
+  }
+  .tmall-info a {
+    //   第一排字体颜色
+    color: #000;
+    line-height: 25px;
+    margin-right: 3px;
+  }
+  .other-link {
+    //   分割线颜色
+    color: #000;
+    line-height: 25px;
+    padding: 5px 0;
+    a {
+      margin-right: 3px;
+      //   第二排字体颜色
+      color: #000;
+    }
+  }
+  // 版权相关信息
+  .footer-copyright {
+    line-height: 20px;
+    // 背景颜色
+    background: #fff;
+    color: #a4a4a4;
+    line-height: 20px;
+    a,
+    span {
+      color: #a4a4a4;
+      margin-right: 65px;
+    }
+  }
+  .footer-img {
+    padding-top: 10px;
+    a {
+      margin-right: 10px;
+    }
+  }
+  padding-bottom: 18px;
+}

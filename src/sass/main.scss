@@ -13,6 +13,73 @@
   height: 33px;
   background: #{$top-bc-color};
 }
+.sn-container {
+  color: #fff;
+  height: 32px;
+  width: 100%;
+  position: relative;
+  line-height: 32px;
+  a {
+    color: #fff;
+  }
+  #login-info {
+    height: 32px;
+    line-height: 32px;
+    display: inline-block;
+    position: relative;
+    .sn-login{
+      padding:0 10px;
+    }
+    .sn-register{
+      padding:0 10px;
+    }
+  }
+  .sn-quick-menu {
+    height: 32px;
+    line-height: 32px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    list-style: none;
+    li {
+      float: left;
+      position: relative;
+      z-index: 93110;
+      padding: 0 10px;
+    }
+    .menu-hd{
+      padding-right: 14px;
+      border-color: #a9180a;
+      display: block;
+      height: 26px;
+      cursor: pointer;
+      z-index: 100001;
+      position: relative;
+      padding: 0 10px;
+    }
+    .sn-cart {
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      padding: 0 10px;
+
+    }
+    .sn-separator {
+      top: 9px;
+      display: inline-block;
+      width: 0;
+      height: 14px;
+      line-height: 14px;
+      vertical-align: top;
+      position: relative; 
+      left: 0;
+      font-size: 0;
+      border-left: 1px solid #ccc;
+      margin: 0 2px 0 5px;
+      padding:0;
+    }
+  }
+}
 //logo
 #logo-search .logo {
   width: 290px;
@@ -145,6 +212,7 @@
   position: absolute;
   top: 37px;
   left: 200px;
+  z-index: 99999;
 }
 //二级导航-左侧-热门链接
 .hot-link {
@@ -234,9 +302,6 @@
   display: block;
   width: 100%;
   height: 100%;
-}
-.banner-center .big-banner {
-  @include setbgpic("https://img.alicdn.com/imgextra/i4/112/O1CN01YuXwxx1ChKtwuzhEi_!!112-0-luban.jpg_q100.jpg_.webp");
 }
 //大banner图-图片广告
 .tanx-banner-con {
@@ -877,7 +942,7 @@
   z-index: 10000;
   height: 50px;
   top: 0;
-  display:none;
+  display: none;
   .wrapper {
     background-color: transparent;
     position: relative;
@@ -965,7 +1030,7 @@
   width: 35px;
   text-align: center;
   margin-left: -673px !important;
-  z-index: 99!important;
+  z-index: 99 !important;
   .nav-header {
     background-color: #ff0036;
     position: relative;
@@ -982,8 +1047,8 @@
     font-size: 12px;
   }
   a {
-    @include basicstyle(36,36,rgba(0, 0, 0, 0.6));
-    @include fontstyle(12,#fff,36);
+    @include basicstyle(36, 36, rgba(0, 0, 0, 0.6));
+    @include fontstyle(12, #fff, 36);
     position: relative;
     display: block;
     text-align: center;
@@ -1003,7 +1068,8 @@
 .fixed-nav-right {
   @include basicstyle(35, null, #000);
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
+  z-index: 9999;
 }

@@ -1,0 +1,117 @@
+@charset "utf-8";
+@import "reset";
+@import "color";
+@import "border";
+@import "mixin";
+@import "footer";
+// 头部logo
+#header {
+  .centerbox {
+    height: 88px;
+    padding: 22px 0px;
+    height: 44px;
+    width: 1190px;
+    margin: auto;
+    h1 img {
+      margin-top: 8px;
+      width: 190px;
+    }
+  }
+}
+// 登陆页面
+.bigbox {
+  width: 100%;
+  height: 600px;
+  background: rgb(255, 176, 69);
+  position: relative;
+  img {
+    display: block;
+    margin: auto;
+  }
+  .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    .login-box {
+      @include basicstyle(350, 400);
+      background: #fff;
+      color: #6c6c6c;
+      padding: 0;
+      position: absolute;
+      top: 50px;
+      right: 50px;
+    }
+    .positionbox {
+      @include basicstyle(350, 345);
+      padding: 25px 26px 20px;
+    }
+    .title {
+      @include fontstyle(16, #3c3c3c, 18, 700);
+      margin-top:15px;
+      height: 18px;
+    }
+    // 报错的盒子
+    .title-red {
+      display: none;
+    }
+    // 输入框的盒子
+    .textbox {
+      margin-top: 25px;
+      position: relative;
+      span {
+        @include fontstyle(14, #999, 42);
+        position: absolute;
+        height: 42px;
+        opacity: 1;
+        transition: all 0.2s ease-out;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-out;
+        left: 50px;
+        top: 0;
+      }
+    }
+    // 输入框标题
+    label {
+      @include basicstyle(40, 40, #ddd);
+      @include fontstyle(14, #606060, 40);
+      display: block;
+      text-align: center;
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      outline: 0;
+    }
+    // 输入框
+    .textbox input {
+      @include basicstyle(240, 18);
+      @include fontstyle(14, #9b9b9b, 18);
+      padding: 11px 8px 11px 50px;
+      border: 1px solid #ddd;
+      border-color: #cbcbcb;
+    }
+    // 提交按钮
+    .btnbox input {
+      @include fontstyle(16, #fff, 42, 700);
+      @include basicstyle(300, 42, #ff0036);
+      margin: 18px 0;
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: middle;
+      border: 0;
+    }
+    // 忘记密码
+    .foget {
+      margin-top: 25px;
+      margin-left: -10px;
+      overflow: hidden;
+      text-align: center;
+      a {
+        color: #6c6c6c;
+        padding-left:10px;
+      }
+      a:hover {
+        color: #ff0036;
+      }
+    }
+  }
+}

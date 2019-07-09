@@ -1,0 +1,357 @@
+/* reset sheet */
+body,
+input,
+button,
+textarea {
+  font: 12px/1.5 tahoma, arial, "\5b8b\4f53"; }
+
+html,
+body,
+p,
+input,
+button,
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0; }
+
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  list-style: none; }
+
+a,
+u {
+  text-decoration: none; }
+
+a {
+  color: #999;
+  font-family: "Microsoft YaHei", SimSun, "\5b8b\4f53", sans-serif; }
+
+b {
+  font-weight: 100; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  font-weight: 100; }
+
+i,
+em {
+  font-style: normal; }
+
+img {
+  border: 0;
+  vertical-align: middle; }
+
+.area-con,
+.wrapper {
+  width: 1230px;
+  margin: 0 auto;
+  padding-right: 30px; }
+
+.wrapper-footer {
+  width: 1190px;
+  margin: 0 auto; }
+
+.area-con {
+  padding-top: 10px; }
+
+#main {
+  background: #f5f5f5;
+  border-bottom: 1px solid #D1D7DC; }
+
+.fleft {
+  float: left; }
+
+.fright {
+  float: right; }
+
+.hide {
+  display: none; }
+
+.show {
+  display: block; }
+
+.banner-btn .selected {
+  background: #fff;
+  opacity: 0.6; }
+
+.product-item-box .product-switch .floor-current-tab {
+  color: #fff;
+  background: #00b262; }
+
+/* reset sheet */
+body,
+input,
+button,
+textarea {
+  font: 12px/1.5 tahoma, arial, "\5b8b\4f53"; }
+
+html,
+body,
+p,
+input,
+button,
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0; }
+
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  list-style: none; }
+
+a,
+u {
+  text-decoration: none; }
+
+a {
+  color: #999;
+  font-family: "Microsoft YaHei", SimSun, "\5b8b\4f53", sans-serif; }
+
+b {
+  font-weight: 100; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  font-weight: 100; }
+
+i,
+em {
+  font-style: normal; }
+
+img {
+  border: 0;
+  vertical-align: middle; }
+
+.area-con,
+.wrapper {
+  width: 1230px;
+  margin: 0 auto;
+  padding-right: 30px; }
+
+.wrapper-footer {
+  width: 1190px;
+  margin: 0 auto; }
+
+.area-con {
+  padding-top: 10px; }
+
+#main {
+  background: #f5f5f5;
+  border-bottom: 1px solid #D1D7DC; }
+
+.fleft {
+  float: left; }
+
+.fright {
+  float: right; }
+
+.hide {
+  display: none; }
+
+.show {
+  display: block; }
+
+.banner-btn .selected {
+  background: #fff;
+  opacity: 0.6; }
+
+.product-item-box .product-switch .floor-current-tab {
+  color: #fff;
+  background: #00b262; }
+
+#header {
+  min-width: 990px;
+  background: #fff; }
+
+#top-bar {
+  height: 33px;
+  background: #eee;
+  color: #656565;
+  border-bottom: 1px solid #ccc; }
+  #top-bar a {
+    color: #656565; }
+
+.sn-container {
+  height: 32px;
+  width: 100%;
+  position: relative;
+  line-height: 32px; }
+  .sn-container #login-info {
+    height: 32px;
+    line-height: 32px;
+    display: inline-block;
+    position: relative; }
+    .sn-container #login-info .sn-login {
+      padding: 0 10px; }
+    .sn-container #login-info .sn-register {
+      padding: 0 10px; }
+  .sn-container .sn-quick-menu {
+    height: 32px;
+    line-height: 32px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    list-style: none; }
+    .sn-container .sn-quick-menu li {
+      float: left;
+      position: relative;
+      z-index: 93110;
+      padding: 0 10px; }
+    .sn-container .sn-quick-menu .menu-hd {
+      padding-right: 14px;
+      border-color: #a9180a;
+      display: block;
+      height: 26px;
+      cursor: pointer;
+      z-index: 100001;
+      position: relative;
+      padding: 0 10px; }
+    .sn-container .sn-quick-menu .sn-cart {
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      padding: 0 10px; }
+    .sn-container .sn-quick-menu .sn-separator {
+      top: 9px;
+      display: inline-block;
+      width: 0;
+      height: 14px;
+      line-height: 14px;
+      vertical-align: top;
+      position: relative;
+      left: 0;
+      font-size: 0;
+      border-left: 1px solid #ccc;
+      margin: 0 2px 0 5px;
+      padding: 0; }
+
+#register {
+  width: 750px;
+  margin: 0 auto;
+  padding: 100px 0 0 70px; }
+  #register form {
+    position: relative; }
+  #register p {
+    margin: 10px auto;
+    width: 500px;
+    height: 40px; }
+    #register p input {
+      width: 250px;
+      height: 30px; }
+    #register p label {
+      font-size: 18px;
+      line-height: 30px;
+      color: #888;
+      width: 80px;
+      height: 30px;
+      display: inline-block;
+      padding-right: 20px; }
+  #register .title {
+    font-size: 16px;
+    line-height: 40px;
+    color: #000;
+    font-weight: 700; }
+    #register .title span {
+      font-size: 14px;
+      line-height: 40px;
+      color: #999;
+      padding-left: 30px; }
+  #register .submit {
+    padding-top: 50px;
+    padding-left: 200px; }
+    #register .submit input {
+      width: 200px;
+      height: 40px;
+      background: #f00;
+      font-size: 18px;
+      line-height: 40px;
+      color: #fff;
+      outline: 0;
+      border: 0;
+      border-radius: 3px;
+      cursor: pointer; }
+  #register .titlebox {
+    width: 200px;
+    height: 150px;
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    right: 45px;
+    border-radius: 8px; }
+    #register .titlebox .regex {
+      width: 150px;
+      height: 40px;
+      background: #eee;
+      font-size: 12px;
+      line-height: 20px;
+      color: #000;
+      margin-top: 15px; }
+    #register .titlebox .qzr {
+      width: 150px;
+      height: 20px;
+      margin-top: 15px; }
+      #register .titlebox .qzr span {
+        text-align: center;
+        width: 40px;
+        height: 20px;
+        background: #eee;
+        display: inline-block;
+        margin-right: 10px; }
+    #register .titlebox .baocuo {
+      width: 150px;
+      height: 20px;
+      background: #eee;
+      margin-top: 15px; }
+  #register .repass {
+    top: 45px; }
+    #register .repass .baocuo {
+      margin-top: 50px; }
+  #register .user {
+    top: 150px; }
+    #register .user .regex {
+      margin-top: 30px; }
+  #register .titlebox::after {
+    content: "\20";
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 10px solid transparent;
+    border-left-color: #ccc;
+    border-bottom-color: #ccc;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 60px;
+    left: -8px; }
+
+/*# sourceMappingURL=registor.css.map */

@@ -86,8 +86,11 @@ img {
 .fright {
   float: right;
 }
-.active {
+.hide {
   display: none;
+}
+.show{
+  display:block;
 }
 .banner-btn .selected {
   background: #fff;

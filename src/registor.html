@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天猫注册</title>
+    <link rel="stylesheet" href="css/registor.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+</head>
+
+<body>
+    <header id=hearder>
+        <!-- 登陆注册 -->
+        <div id="top-bar">
+            <div class="wrapper">
+                <div class="sn-container">
+                    <p id="login-info" class="sn-login-info">
+                        <em>喵，欢迎来天猫</em>
+                        <a class="sn-login" href="http://10.31.158.21:8088/tianmao/object/src/login.html"
+                            target="_top">请登录</a>
+                        <a class="sn-register" href="http://10.31.158.21:8088/tianmao/object/src/registor.html"
+                            target="_top">免费注册</a>
+                    </p>
+                    <ul class="sn-quick-menu">
+                        <li class="sn-mytaobao">
+                            <div class="sn-menu">
+                                <a class="menu-hd" href="">我的淘宝<b></b>
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="sn-cart"><i class="iconfont icon-gouwucheman
+                                    "></i>
+                            <a class="sn-cart-link" href="#" rel="nofollow" id="mc-menu-hd">
+                                购物车
+                                <span class="mc-count mc-pt3">0</span>
+                                件
+                            </a>
+                        </li>
+                        <li class="sn-favorite">
+                            <div class="sn-menu">
+                                <a class="menu-hd" href="#" target="_top" aria-haspopup="true" aria-expanded="false">
+                                    收藏夹
+                                    <b></b>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="sn-separator"></li>
+                        <li class="sn-mobile">
+                            <i class="iconfont icon-shumashouji"></i>
+                            <a title="天猫无线" class="sn-mobile-link" href="#">手机版</a>
+                        </li>
+                        <li class="sn-home">
+                            <a href="#">淘宝网</a>
+                        </li>
+                        <li class="sn-seller menu-item">
+                            <div class="sn-menu J_DirectPromo">
+                                <a class="menu-hd" href="#" target="_top">商家支持
+                                    <b></b>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="sn-sitemap">
+                            <div class="sn-menu">
+                                <h3 class="menu-hd"><i class="iconfont icon-liebiao1
+                                            "></i>
+                                    <span>网站导航</span>
+                                    <b></b>
+                                </h3>
+                                <div class="menu-bd">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="register">
+            <form action="http://10.31.158.21:8088/tianmao/object/php/registor.php" method="post">
+                <p class="title">请设置登陆密码<span>登录时验证，保护账号信息</span></p>
+                <p>
+                    <label for="">登陆密码</label>
+                    <input class="password" type="password"><span class="title-password"
+                        style="margin-left:10px"></span>
+                </p>
+                <p> <label for="">密码确认</label><input class="repeat-password" type="password"><span
+                        class="title-repeat-password" style="margin-left:10px"></span></p>
+                <p class="title">设置会员名</p>
+                <p> <label for="">登录名</label><input class="username" type="text"><span class="nametitle"
+                        style="margin-left:10px"></span></p>
+                <p class="submit"><input type="submit"></p>
+                <div class="titlebox" style="display:none">
+                    <p class="regex">请输入不超过14位的字符，包括数字，字母，下划线</p>
+                    <p class="qzr"><span>弱</span><span>中</span><span>强</span></p>
+                    <p class="baocuo"></p>
+                </div>
+                <div class="titlebox repass" style="display:none">
+                    <p class="baocuo"></p>
+                </div>
+                <div class="titlebox user" style="display:none">
+                    <p class="regex">请输入不超过14位的字符，包括数字，字母，下划线</p>
+                    <p class="baocuo"></p>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="script/js/registor.js"></script>
+</body>
+
+</html>
