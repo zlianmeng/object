@@ -14,7 +14,9 @@
     <header id="header">
         <div class="centerbox">
             <h1>
-                <img src="img/TB1_Gn8RXXXXXXqaFXXXXXXXXXX-380-54.png" alt="">
+                <a href="http://localhost:8088/tianmao/object/src/tianmao.html">
+                    <img src="img/TB1_Gn8RXXXXXXqaFXXXXXXXXXX-380-54.png" alt="">
+                </a>
             </h1>
         </div>
     </header>
@@ -31,20 +33,21 @@
                             <label for="">
                                 <i class="iconfont icon-kefuyouxian"></i>
                             </label>
-                            <span>会员名/邮箱/手机号</span>
-                            <input type="text"></p>
-                        <p class="textbox"><label for=""><i class="iconfont icon-tianmaopaidui"></i></label><input
-                                type="text"></p>
-                        <p class="btnbox"><input type="button" value="登陆"></p>
+                            <!-- <span class="place">会员名/邮箱/手机号</span> -->
+                            <input class="username" placeholder="会员名/邮箱/手机号" type="text"></p>
+                        <p class="textbox"><label for=""><i class="iconfont icon-tianmaopaidui"></i></label>
+                            <input class="password" type="password"></p>
+                        <p class="btnbox"><input style="outline: none" class="btn" type="button" value="登陆"></p>
                         <div class="foget">
                             <a href="#">忘记密码</a>
                             <a href="#">忘记会员名</a>
-                            <a href="#">免费注册</a>
+                            <a href="http://localhost:8088/tianmao/object/src/registor.html">免费注册</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="tishi">账号或密码错误</div>
     </main>
     <!-- 底部 -->
     <footer id="footer">
@@ -118,7 +121,8 @@
         <div id="server-num"></div>
     </footer>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-	<script src="script/js/login.js"></script>
+    <script src="script/js/modaltool.js"></script>
+    <script src="script/js/login.js"></script>
 </body>
 
 </html>

@@ -115,3 +115,12 @@
     }
   }
 }
+#tishi{
+  @include basicstyle(300,100,#fff);
+  @include fontstyle(16,#000,100);
+  position: absolute;
+  display:none;
+  text-align: center;
+  border-radius:8px;
+  border:1px solid #000;
+}

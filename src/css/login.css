@@ -328,4 +328,17 @@ img {
       .bigbox .wrapper .foget a:hover {
         color: #ff0036; }
 
+#tishi {
+  width: 300px;
+  height: 100px;
+  background: #fff;
+  font-size: 16px;
+  line-height: 100px;
+  color: #000;
+  position: absolute;
+  display: none;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #000; }
+
 /*# sourceMappingURL=login.css.map */
