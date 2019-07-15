@@ -20,9 +20,9 @@
             this.$hidebox.attr('href', '#');
             this.$hidebox.on('click', function () {
                 that.$usernamebox.html("请登录");
-                that.$usernamebox.attr('href', 'http://localhost:8088/tianmao/object/src/login.html');
+                that.$usernamebox.attr('href', 'http://10.31.158.21:8088/tianmao/object/src/login.html');
                 that.$hidebox.html('免费注册');
-                that.$hidebox.attr('href', "http://localhost:8088/tianmao/object/src/registor.html");
+                that.$hidebox.attr('href', "http://10.31.158.21:8088/tianmao/object/src/registor.html");
                 that.removecookie('username');
                 return false;
             })
@@ -62,7 +62,7 @@
             let table = that.getcookie('cookietable').split(',')[index];
             $.ajax({
                 async: false,
-                url: "http://localhost:8088/tianmao/object/php/car.php?id=" + value + '&table=' + table,
+                url: "http://10.31.158.21:8088/tianmao/object/php/car.php?id=" + value + '&table=' + table,
                 dataType: 'json',
             }).done(function (data) {
                 // 克隆模板
@@ -130,7 +130,7 @@
             // 设置单次点击增加或者减少的数量
             $onum.val(+$onum.val() + add);
             // 后台请求数据更新单个商品的总价
-            $.get("http://localhost:8088/tianmao/object/php/car.php", { id: $onum.attr('uid'), table: $onum.attr('table') }, function (data) {
+            $.get("http://10.31.158.21:8088/tianmao/object/php/car.php", { id: $onum.attr('uid'), table: $onum.attr('table') }, function (data) {
                 data = JSON.parse(data);
                 let prices = 0;
                 prices += +data.price * +$onum.val();

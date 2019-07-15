@@ -18,9 +18,9 @@
 			this.$hidebox.attr('href', '#');
 			this.$hidebox.on('click', function () {
 				that.$usernamebox.html("请登录");
-				that.$usernamebox.attr('href', 'http://localhost:8088/tianmao/object/src/login.html');
+				that.$usernamebox.attr('href', 'http://10.31.158.21:8088/tianmao/object/src/login.html');
 				that.$hidebox.html('免费注册');
-				that.$hidebox.attr('href', "http://localhost:8088/tianmao/object/src/registor.html");
+				that.$hidebox.attr('href', "http://10.31.158.21:8088/tianmao/object/src/registor.html");
 				that.removecookie('username');
 				return false;
 			})
@@ -31,7 +31,7 @@
 	Web.prototype.ajax = function () {
 		let that = this;
 		$.ajax({
-			url: 'http://localhost:8088/tianmao/object/php/index-data.php',
+			url: 'http://10.31.158.21:8088/tianmao/object/php/index-data.php',
 			dataType: 'json'
 		}).done(function (data) {
 			//天猫国际数据渲染
@@ -123,7 +123,7 @@
 			that.str += `
 				${tagh}
 				<div class="product-item">
-					<a class="product-item-link" href="http://localhost:8088/tianmao/object/src/details.html?table=${name}&id=${index}">
+					<a class="product-item-link" href="http://10.31.158.21:8088/tianmao/object/src/details.html?table=${name}&id=${index}">
 						<div class="floor-item-tag" style="visibility:hidden"></div>
 						<img src="${value.url}"
 							alt="">

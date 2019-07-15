@@ -29,7 +29,7 @@
         let that = this;
         $.ajax({
             async:false,
-            url: "http://localhost:8088/tianmao/object/php/login.php",
+            url: "http://10.31.158.21:8088/tianmao/object/php/login.php",
             type: 'post',
             data: {
                 username: that.$username.val(),
@@ -39,7 +39,7 @@
             if (data) {
                 flag = true;
                 that.setcookie('username', that.$username.val(), 1);
-                location.href = 'http://localhost:8088/tianmao/object/src/tianmao.html';
+                location.href = 'http://10.31.158.21:8088/tianmao/object/src/index.html';
             } else {
                 new Modal({
                     btnname: '.btn',

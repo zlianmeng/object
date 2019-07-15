@@ -89,7 +89,7 @@
         if (this.$ajax == true) {
             $.ajax({
                 type: 'get',
-                url: `http://localhost:8088/tianmao/object/php/registor-repeat.php?username=${that.$username.val()}`,
+                url: `http://10.31.158.21:8088/tianmao/object/php/registor-repeat.php?username=${that.$username.val()}`,
             }).done(function (sign) {
                 if (!sign) {
                     that.$titlebox.eq(2).css('display', 'none');

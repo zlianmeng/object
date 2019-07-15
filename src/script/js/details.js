@@ -23,9 +23,9 @@
             this.$hidebox.attr('href', '#');
             this.$hidebox.on('click', function () {
                 that.$usernamebox.html("请登录");
-                that.$usernamebox.attr('href', 'http://localhost:8088/tianmao/object/src/login.html');
+                that.$usernamebox.attr('href', 'http://10.31.158.21:8088/tianmao/object/src/login.html');
                 that.$hidebox.html('免费注册');
-                that.$hidebox.attr('href', "http://localhost:8088/tianmao/object/src/registor.html");
+                that.$hidebox.attr('href', "http://10.31.158.21:8088/tianmao/object/src/registor.html");
                 that.removecookie('username');
                 return false;
             })
@@ -36,7 +36,7 @@
     Datashow.prototype.ajax = function () {
         let that = this;
         $.ajax({
-            url: "http://localhost:8088/tianmao/object/php/details.php?table=" + this.tablename + "&id=" + this.id,
+            url: "http://10.31.158.21:8088/tianmao/object/php/details.php?table=" + this.tablename + "&id=" + this.id,
             dataType: "json"
         }).done(function (data) {
             let [spicstr, bpicstr, productliststr, titlestr, pricestr] = ['', '', '', '', ''];
